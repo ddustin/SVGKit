@@ -32,9 +32,9 @@
 #define kSVGElementIdentifier @"SVGElementIdentifier"
 
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-@property (nonatomic, readonly)  SVGDocument *document;
+@property (nonatomic, readonly, assign)  SVGDocument *document;
 #else
-@property (nonatomic, readonly)  __weak  SVGDocument *document;
+@property (nonatomic, readonly, assign)  __weak  SVGDocument *document;
 #endif
 
 @property (nonatomic, readonly) NSArray *children;
@@ -50,7 +50,7 @@
 @property (nonatomic) CGAffineTransform transformRelative;
 #endif
 /*! Required by SVG transform and SVG viewbox: you have to be able to query your parent nodes at all times to find out your actual values */
-@property (nonatomic, retain) SVGElement *parent;
+@property (nonatomic, assign) SVGElement *parent;
 
 + (BOOL)shouldStoreContent; // to optimize parser, default is NO
 
