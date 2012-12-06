@@ -125,7 +125,9 @@ static NSMutableSet *_parserExtensions = nil;
 	[_storedChars release];
 	[_elementStack release];
     _document = nil;
-	[_parserExtensions release];
+    self.sourceURL = nil;
+    self.parseWarnings = nil;
+    self.parserExtensions = nil;
 	[super dealloc];
 }
 
